@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="jumbotron text-center">
+          <h1>mars info</h1>
+          <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Find the interesting facts!</a></p>
+        </div>
+    
+        <!-- Craigslist Listings -->
+        <div class="row" id="craiglist-listings">
+          <div class="col-md-12">
+            <h4 class="heading">{{data.news_title}}</h4>
+              <p>{{data.news_paragraph}}</p>
+              <img src={{data.featured_image}}>
+              <p>{{data.weather}}</p>
+              <div class="col-md-6">
+                <div class="thumbnail">
+                  
+                  <img src={{data.hemispheres[0].imagr_url}}> 
+                  <div class="caption">
+                    <h3>{{data.hemispheres[0].title}}</h3>
+                  </div>
+                  <img src={{data.hemispheres[1].imagr_url}}>
+                  <div class="caption">
+                    <h3>{{data.hemispheres[1].title}}</h3>
+                  </div>
+                  <img src={{data.hemispheres[2].imagr_url}}>
+                  <div class="caption">
+                    <h3>{{data.hemispheres[2].title}}</h3>
+                  </div>
+                  <img src={{data.hemispheres[3].imagr_url}}>
+                  <div class="caption">
+                    <h3>{{data.hemispheres[3].title}}</h3>
+                  </div>
+                </div>
+            </div>
+            <div class="row" id="mars-facts">
+              <div class="col-md-12">
+                <h4>Mars Facts</h4>
+                {{data.facts | safe}}
+              </div>
+            <p>{{data.weather}}</p> 
+            <p>{{data.last_modified}}</p>
+            </div>
+            <small> {{data.weather}} {{data.last_modified}}</small>
+          </div>
+        </div>
+    
+      </div> 
+</body>
+</html>
